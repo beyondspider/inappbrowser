@@ -41,10 +41,12 @@ var app = {
 
         console.log('Received Event: ' + id);
 
-        setTimeout(this.openUrl("https://www.baidu.com/"), 2000);
+        //this.openUrl("https://www.baidu.com/");
     },
 
     openUrl: function(url) {
+        var url = "https://www.baidu.com/";
+
         var target = "_blank";
 
         var options = "location=yes,hidden=no,beforeload=yes";
