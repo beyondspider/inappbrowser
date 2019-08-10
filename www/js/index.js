@@ -40,6 +40,38 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+
+        setTimeout(this.openUrl("https://www.baidu.com/"), 2000);
+    },
+
+    openUrl: function(url) {
+        var target = "_blank";
+
+        var options = "location=yes,hidden=no,beforeload=yes";
+
+        var inAppBrowserRef = cordova.InAppBrowser.open(url, target, options);
+
+        window.HomeBrowser = inAppBrowserRef;
+
+        inAppBrowserRef.addEventListener("loadstart", function() {
+            console.log("openHome.loadstart");
+        });
+
+        inAppBrowserRef.addEventListener("loadstop", function() {
+            console.log("openHome.loadstop");
+        });
+
+        inAppBrowserRef.addEventListener("loaderror", function(params) {
+            console.log("openHome.loaderror" + JSON.stringify(params));
+        });
+
+        inAppBrowserRef.addEventListener("beforeload", function() {
+            console.log("openHome.beforeload");
+        });
+
+        inAppBrowserRef.addEventListener("message", function() {
+            console.log("openHome.message");
+        });
     }
 };
 
