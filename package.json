@@ -14,7 +14,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "cordova-ios": "^5.0.1",
-    "cordova-plugin-inappbrowser": "git+https://github.com/apache/cordova-plugin-inappbrowser.git"
+    "cordova-plugin-inappbrowser": "^3.0.0"
   },
   "cordova": {
     "plugins": {
